@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskFlow | JavaScript Functions</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="TaskFlow home">
+        <span class="brand-mark">✓</span>
+        <span>Task<span class="brand-accent">Flow</span></span>
+      </a>
+      <span class="course-tag">JAVASCRIPT · FUNCTION-BASED WEB APP</span>
+    </header>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">YOUR DAY, IN CONTROL</p>
+        <h1>Make progress.<br /><span>One task at a time.</span></h1>
+        <p class="hero-description">A clean little task tracker built with reusable JavaScript functions. Add tasks, check them off, and keep your focus.</p>
+      </div>
+      <div class="hero-orb" aria-hidden="true">
+        <div class="orb-ring ring-one"></div>
+        <div class="orb-ring ring-two"></div>
+        <div class="orb-check">✓</div>
+      </div>
+    </section>
+
+    <section class="dashboard" aria-label="Task tracker">
+      <div class="panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">TASK MANAGER</p>
+            <h2>My tasks <span id="totalBadge" class="count-badge">0</span></h2>
+          </div>
+          <div class="date-chip" id="todayLabel">TODAY</div>
+        </div>
+
+        <form id="taskForm" class="task-form" autocomplete="off">
+          <label class="sr-only" for="taskInput">Enter a task</label>
+          <span class="input-icon">＋</span>
+          <input id="taskInput" type="text" maxlength="120" placeholder="What needs to get done?" />
+          <button class="add-button" type="submit"><span>Add task</span><span aria-hidden="true">↗</span></button>
+        </form>
+        <p class="form-hint" id="formHint">Press Enter or click Add task. Keep it short and actionable.</p>
+
+        <div class="filter-row" role="group" aria-label="Filter tasks">
+          <button class="filter-button active" type="button" data-filter="all">All <span id="allCount">0</span></button>
+          <button class="filter-button" type="button" data-filter="open">In progress <span id="openCount">0</span></button>
+          <button class="filter-button" type="button" data-filter="done">Completed <span id="doneCount">0</span></button>
+        </div>
+
+        <ul id="taskList" class="task-list" aria-live="polite"></ul>
+
+        <div id="emptyState" class="empty-state">
+          <div class="empty-icon">✦</div>
+          <h3>Your list is clear</h3>
+          <p>Add a task above and make your first move.</p>
+        </div>
+
+        <footer class="list-footer">
+          <span id="counter">0 tasks left</span>
+          <button id="clearCompleted" class="text-button" type="button">Clear completed</button>
+        </footer>
+      </div>
+
+      <aside class="side-panel">
+        <div class="progress-card">
+          <div class="progress-top">
+            <div><p class="eyebrow">DAILY PROGRESS</p><h3>You're moving forward</h3></div>
+            <span class="progress-icon">↗</span>
+          </div>
+          <div class="progress-number"><span id="progressPercent">0</span><small>%</small></div>
+          <div class="progress-track"><div id="progressBar" class="progress-fill"></div></div>
+          <p id="progressMessage" class="progress-message">Every small step counts.</p>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-icon">✧</div>
+          <p class="eyebrow">A LITTLE REMINDER</p>
+          <h3>Focus on what you can finish.</h3>
+          <p>Break big goals into small tasks. Check them off as you go, and let momentum do the rest.</p>
+        </div>
+
+        <div class="functions-card">
+          <p class="eyebrow">UNDER THE HOOD</p>
+          <h3>Built with functions</h3>
+          <div class="function-list">
+            <span><code>createTask()</code><b>Creates</b></span>
+            <span><code>addTask()</code><b>Adds</b></span>
+            <span><code>toggleTask()</code><b>Completes</b></span>
+            <span><code>deleteTask()</code><b>Removes</b></span>
+            <span><code>getVisible()</code><b>Filters</b></span>
+            <span><code>renderTasks()</code><b>Draws UI</b></span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <footer class="page-footer">
+      <span>TaskFlow</span><span>Made with HTML · CSS · JavaScript</span>
+    </footer>
+  </main>
+</body>
+</html>
